@@ -39,7 +39,7 @@ def bc_pressure_set(p, file_name_r, file_name_w):
         return
 
     temp = f_r.readline()
-    while temp != '   (3) Restart from previous solution\r\n':
+    while temp != '   (3) Restart from previous solution\n':
         temp = f_r.readline()
     temp = f_r.readline()
     toggle = temp.split()[0]
@@ -48,11 +48,11 @@ def bc_pressure_set(p, file_name_r, file_name_w):
     if toggle == '1':
         f_r = open(file_name_r, 'r')
         temp = f_r.readline()
-        while temp != ' Do you want to prescribe auxiliary variable/rhs number 1 [N]? Y\r\n':
+        while temp != ' Do you want to prescribe auxiliary variable/rhs number 1 [N]? Y\n':
             f_w.write(temp)
             temp = f_r.readline()
         f_w.write(temp)
-        f_w.write(' The increment is [0.0]:   ' + str(p) + '\r\n')
+        f_w.write(' The increment is [0.0]:   ' + str(p) + '\n')
         temp = f_r.readline()
         temp = f_r.readline()
         while temp != '':
@@ -61,7 +61,7 @@ def bc_pressure_set(p, file_name_r, file_name_w):
     elif toggle == '2':
         f_r = open(file_name_r, 'r')
         temp = f_r.readline()
-        while temp != ' Dependent variable/equation number 4 :\r\n':
+        while temp != ' Dependent variable/equation number 4 :\n':
             f_w.write(temp)
             temp = f_r.readline()
         f_w.write(temp)
@@ -73,7 +73,7 @@ def bc_pressure_set(p, file_name_r, file_name_w):
             temp = f_r.readline()
             f_w.write(temp)
             junk = f_r.readline()
-            f_w.write(' The increment is [0.0]:  ' + str(p) + '\r\n')
+            f_w.write(' The increment is [0.0]:  ' + str(p) + '\n')
             temp = f_r.readline()
             f_w.write(temp)
         temp = f_r.readline()
@@ -140,14 +140,14 @@ def bc_displacement_set(node_idx, file_name_current_epi, file_name_next_epi, fil
 
     temp = f_r.readline()
     for component in [0,1,2]:
-        while temp != ' Enter node #s/name [EXIT]:    31\r\n':
+        while temp != ' Enter node #s/name [EXIT]:    31\n':
             f_w.write(temp)
             temp = f_r.readline()
         for i in range(4,8):
             f_w.write(temp)
             f_w.write(f_r.readline())
             junk = f_r.readline()
-            f_w.write(' The increment is [0.0]:    '+str(nodes[i][component])+'\r\n')
+            f_w.write(' The increment is [0.0]:    '+str(nodes[i][component])+'\n')
             for i in range(0,10):
                 f_w.write(f_r.readline())
             temp = f_r.readline()

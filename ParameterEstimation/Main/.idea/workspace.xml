@@ -31,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="passive_mechanics.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="passive_mechanics.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/passive_mechanics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="735">
+              <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -51,17 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bc_setup.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bc_setup.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bc_setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            <state relative-caret-position="1125">
+              <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/bc_setup.py" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="410" />
@@ -167,18 +174,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bc_setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="58" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="74" column="49" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passive_mechanics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -191,10 +198,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/passive_mechanics.py">
+    <entry file="file://$PROJECT_DIR$/bc_setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="1125">
+          <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
           <folding />
         </state>
       </provider>
