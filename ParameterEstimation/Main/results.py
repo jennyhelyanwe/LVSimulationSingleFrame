@@ -6,10 +6,10 @@ from util_results import *
 
 def results_passive_generate(study_id, study_frame, name, status):
     # Copy optimised parameters to results folder
-    os.chdir(os.environ['STUDIES']+study_id+'_singleframe/LVMechanics'+study_id+'/PassiveMechanics')
+    os.chdir(os.environ['STUDIES']+study_id+'/LVMechanics'+study_id+'/PassiveMechanics')
 
     # Generate PV curve for optimised models with fitting error at each frame.
-    f_w = open(os.environ['RESULTS']+study_id+'_singleframe/Passive_PV_Errors_'+name+'.txt', 'w+')
+    f_w = open(os.environ['RESULTS']+study_id+'/Passive_PV_Errors_'+name+'.txt', 'w+')
 
     # Write DS volume and error of zero with DS pressure
     f_r = open('output_cavity_volume/LVCavityInit.opelem', 'r')
@@ -49,7 +49,7 @@ def results_passive_generate(study_id, study_frame, name, status):
 
     f_w.close()
 
-    f_w = open(os.environ['RESULTS']+study_id+'_singleframe/Passive_Regional_Errors_'+name+'.txt', 'w+')
+    f_w = open(os.environ['RESULTS']+study_id+'/Passive_Regional_Errors_'+name+'.txt', 'w+')
     f_w.write('Epi_apex\tEpi_midlow\tEpi_mid\tEpi_base\tEndo_apex\tEndo_midlow\tEndo_mid\tEndo_base\n')
     f_w.write('0\t0\t0\t0\t0\t0\t0\t0\n')
     for i in range(0, len(idx)):
@@ -112,7 +112,7 @@ def results_passive_generate(study_id, study_frame, name, status):
                   str(endo_apex_ave)+'\t'+str(endo_midlow_ave)+'\t'+str(endo_mid_ave)+'\t'+str(endo_base_ave)+'\n')
 
     if name == 'Opt':
-        copy('LV_CubicGuc.ipmate', os.environ['RESULTS']+study_id+'_singleframe/LV_CubicGuc_Opt.ipmate')
+        copy('LV_CubicGuc.ipmate', os.environ['RESULTS']+study_id+'/LV_CubicGuc_Opt.ipmate')
 
 
 
