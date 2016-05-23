@@ -1,34 +1,34 @@
 
-$DS = 16;
+$DS = 18;
 $ED = 1;
 $tot = 25;
 
 $t = 0
 for ($i = $DS;$i<=$tot; $i++){
-    gfx read data STF_17_Surface_Points_Epi_$i time $t region epi;
+    gfx read data PETALE_P003_Surface_Points_Epi_$i time $t region epi;
     $t = $t + 1;
 }
 
-gfx read data STF_17_Surface_Points_Epi_1 time $t region epi;
+gfx read data PETALE_P003_Surface_Points_Epi_1 time $t region epi;
 
 
 $t = 0
 for ($i = $DS;$i<=$tot; $i++){
-    gfx read data STF_17_Surface_Points_Endo_$i time $t region endo;
+    gfx read data PETALE_P003_Surface_Points_Endo_$i time $t region endo;
     $t = $t + 1;
 }
 
-gfx read data STF_17_Surface_Points_Endo_1 time $t region endo;
+gfx read data PETALE_P003_Surface_Points_Endo_1 time $t region endo;
 
 
 
 $t = 0
 for ($i = $DS;$i<=$tot; $i++){
-    gfx read node STF_17_$i time $t region model;
+    gfx read node PETALE_P003_$i time $t region model;
     $t = $t + 1;
 }
-gfx read node STF_17_1 time $t region model;
-gfx read elem STF_17_$DS region model;
+gfx read node PETALE_P003_1 time $t region model;
+gfx read elem PETALE_P003_$DS region model;
 
 gfx modify g_element "/" general clear;
 gfx modify g_element /epi/ general clear;

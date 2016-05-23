@@ -1,8 +1,10 @@
 import sys
 import os
 from numpy.ma import zeros
-from numpy.numarray.numerictypes import Float
-from numpy.numarray.numerictypes import Int
+from numpy.core.numerictypes import float as Float
+from numpy.core.numerictypes import int as Int
+#from numpy.numarray.numerictypes import Float
+#from numpy.numarray.numerictypes import Int
 
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
@@ -191,7 +193,8 @@ if __name__ == "__main__":
     files = os.listdir(modelDir)
     print files
     modelFiles = [f for f in files if f.endswith(".model")]
-
+    print modelFiles
+    quit()
     for f in modelFiles:
         print f
         convert_to_hermite(os.path.join(modelDir,f), map0, map1, map2)

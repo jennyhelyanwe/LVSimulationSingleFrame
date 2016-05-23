@@ -9,7 +9,7 @@ from math import pi
 from string import strip
 
 # ############################################################################################
-def reWriteExnodeToIpnode(current_study_name):
+def reWriteExnodeToIpnode(current_study_name, user_name):
     ####### Check if the model_ipnode directory exits ######
     if not os.path.exists('../Studies/' + current_study_name + '/model_ipnode'):
         print 'Creating directory model_ipnode for study ', current_study_name
@@ -26,7 +26,7 @@ def reWriteExnodeToIpnode(current_study_name):
         if os.path.exists('model/' + current_study_name + '_' + str(i + 1) + '.model.exnode'):
             filename_exnode = ('model/' + current_study_name + '_' + str(i + 1) + '.model.exnode')
         else:
-            filename_exnode = ('model/' + current_study_name + '_ZJW_' + str(i + 1) + '.model.exnode')
+            filename_exnode = ('model/' + current_study_name + '_'+user_name+'_' + str(i + 1) + '.model.exnode')
         ## Read in the CIM model parameters
         [focus, Nodal_Param_CIM] = readExnodeFile(filename_exnode)
         print ' **** Finished Reading nodal parameters for frame .......', i + 1
@@ -92,7 +92,6 @@ def reWriteExnodeToIpnode(current_study_name):
         filename_ipnode = ('model_ipnode/' + current_study_name + '_' + str(i + 1) + '.ipnode')
         writeCMISSIpnode(filename_ipnode, focus, Nodal_Param_CMISS)
         print ' **** Finished writing ipnode for frame  .......', i + 1
-
         #######################################################################################
         ################### Write CMISS com file to convert models to RC ######
         fileName = 'convert2rc.com'
@@ -172,7 +171,7 @@ def writeCMISSIpnode(fileName, focus_current, node_param_CMISS):
     except IOError:
         print 'ERROR: writeCMISSIpnode_Error: unable to open', fileName
         return
-
+    print focus_current
     ## Write header information
     file.write(' CMISS Version 2.1  ipnode File Version 2\n')
     file.write(' Heading: Elements created in Perl\n')

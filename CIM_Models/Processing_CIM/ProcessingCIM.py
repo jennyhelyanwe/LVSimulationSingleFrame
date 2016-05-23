@@ -14,7 +14,7 @@ import re
 from ReWriteExnodeToIpnode import reWriteExnodeToIpnode
 
 # ############################################################################################
-def convertCIMModel(current_study_name):
+def convertCIMModel(current_study_name, user_name):
     ## Copy template files
     all_files = os.listdir('TemplateFiles_CIM')
     os.chdir('TemplateFiles_CIM')
@@ -30,7 +30,7 @@ def convertCIMModel(current_study_name):
     if not os.path.exists('model'):
         os.mkdir('model')
 
-    os.chdir('model_' + current_study_name + '_bw')
+    os.chdir('model_' + current_study_name + '_'+user_name)
     os.system('cp *.model ../model')
 
     ##### Step 2: Call Jae-Doe's python code to convert .model to exnode files ####
@@ -46,7 +46,7 @@ def convertCIMModel(current_study_name):
 
     ##### Step 3: Convert CIM prolate-spheroidal models to CMISS PS models ########
     os.chdir('../../Processing_CIM/')
-    reWriteExnodeToIpnode(current_study_name)
+    reWriteExnodeToIpnode(current_study_name, user_name)
 
     ##### Step 4: Convert CMISS PS models to CMISS RC models ######################
     os.system('cm convert2rc.com')
@@ -70,7 +70,6 @@ print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 print '      The total number of studies is', no_studies
 print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 
-#for i in range(1,2):
 for i in range(no_studies):
     current_study_name = all_files_list[i]
     #if current_study_name.find('STF_09')!= -1:
@@ -81,6 +80,5 @@ for i in range(no_studies):
     print '*****************************************************************'
     print ''
 
-    convertCIMModel(current_study_name)
-    #quit()
+    convertCIMModel(current_study_name, 'bw')
 

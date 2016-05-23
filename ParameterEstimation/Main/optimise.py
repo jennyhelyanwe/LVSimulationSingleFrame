@@ -79,7 +79,7 @@ def optimise_passive_obj_function(C1, study_id, study_frame):
 
     ## 2. Re-run simulation using current C1 estimate and get new model predictions for each frame from DS+1 to ED.
     # Solve warm start using new C1 guess
-    passive_warm_solve(study_id, 'ED', reg_toggle=1)
+    passive_warm_solve(study_id, 'ED', reg_toggle=0)
 
     ## 3. Evaluate MSE of fitting and sum for all frames from DS+1 to ED.
     toggle = 1  # Scalar objective value.
