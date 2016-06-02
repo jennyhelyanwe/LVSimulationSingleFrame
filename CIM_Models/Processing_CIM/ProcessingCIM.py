@@ -13,7 +13,12 @@ from shutil import copy
 import re
 from ReWriteExnodeToIpnode import reWriteExnodeToIpnode
 
-# ############################################################################################
+##############################################################################################
+def listdir_nohiddenpath(path):
+    for f in os.listdir(path):
+        if not f.startswith('.'):
+            yield f
+
 def convertCIMModel(current_study_name, user_name):
     ## Copy template files
     all_files = os.listdir('TemplateFiles_CIM')
@@ -58,14 +63,11 @@ def convertCIMModel(current_study_name, user_name):
 
 
 ############################### Main Python Codes ######################################
-
 os.system('rm *.*~')
 ## List all files in the CIM_Models folder
-all_files_list = dircache.listdir('../Studies/')
-print all_files_list
+all_files_list = list(listdir_nohiddenpath('../Studies/'))
 ## Work out how many study cases.  
 no_studies = len(all_files_list)
-
 print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
 print '      The total number of studies is', no_studies
 print '++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
